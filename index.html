@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon: NT in Accent Color on Dark Background -->
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMGYxNzJhIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNzAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSW50ZXIsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNGNDNGNUUiPk5UPC90ZXh0Pgo8L3N2ZyE+" type="image/svg+xml">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiIgZmlsbD0iIzBmMTcyYSIvPgo8dGV4dCB4PSI1MCUiIHk9IjcwJSIgZG9taW5udXQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjRjQzRjVFIj5OVDwvdGV4dD4KPC9zdmc+Igo=" type="image/svg+xml">
     <title>Ntrix Technologies - Engineering Tomorrow's Digital World</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,6 +18,17 @@
             --color-accent: #F43F5E; /* Rose 500 (Vibrant Red/Coral from Logo) */
             --color-text-light: #F8FAFC; /* Slate 50 */
             --color-card-bg: #1e293b; /* Slate 800 */
+        }
+        /* Custom CSS for the testimonial carousel dots */
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #475569; /* Slate 600 */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .carousel-dot.active {
+            background-color: var(--color-accent);
+            transform: scale(1.2);
         }
     </style>
     <script>
@@ -59,9 +70,9 @@
                     <!-- Tabs are explicitly white -->
                     <a href="#solutions" class="text-white text-sm font-medium hover:text-accent transition duration-200">What We Do</a>
                     <a href="#services" class="text-white text-sm font-medium hover:text-accent transition duration-200">Solutions</a>
-                    <!-- Updated Navigation Link -->
                     <a href="#success-stories" class="text-white text-sm font-medium hover:text-accent transition duration-200">Success Stories</a>
-                    <a href="#about" class="text-white text-sm font-medium hover:text-accent transition duration-200">About Us</a>
+                    <a href="#about-us" class="text-white text-sm font-medium hover:text-accent transition duration-200">About Us</a>
+                    <a href="#contact" class="text-white text-sm font-medium hover:text-accent transition duration-200">Contact</a>
                 </nav>
 
                 <!-- CTA Button: Updated to WhatsApp link -->
@@ -80,9 +91,9 @@
         <div id="mobile-menu" class="hidden md:hidden pb-3 pt-2 space-y-1 sm:px-3 bg-primary border-t border-slate-700">
             <a href="#solutions" class="block px-3 py-2 text-base font-medium text-color-text-light hover:bg-card rounded-md">What We Do</a>
             <a href="#services" class="block px-3 py-2 text-base font-medium text-color-text-light hover:bg-card rounded-md">Solutions</a>
-            <!-- Updated Navigation Link -->
             <a href="#success-stories" class="block px-3 py-2 text-base font-medium text-color-text-light hover:bg-card rounded-md">Success Stories</a>
-            <a href="#about" class="block px-3 py-2 text-base font-medium text-color-text-light hover:bg-card rounded-md">About Us</a>
+            <a href="#about-us" class="block px-3 py-2 text-base font-medium text-color-text-light hover:bg-card rounded-md">About Us</a>
+            <a href="#contact" class="block px-3 py-2 text-base font-medium text-color-text-light hover:bg-card rounded-md">Contact</a>
             <!-- Mobile CTA Button: Updated to WhatsApp link -->
             <a href="https://wa.link/oc3j0f" target="_blank" class="block w-full text-center mt-4 px-3 py-2 border border-transparent text-base font-semibold rounded-lg shadow-sm text-white bg-accent hover:bg-rose-600 transition duration-300">
                 Start Your Transformation
@@ -166,6 +177,47 @@
                 </div>
             </div>
         </section>
+
+        <!-- Key Achievements Section -->
+        <section class="py-20 sm:py-28 bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Why Choose Ntrix? Our Track Record</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    
+                    <!-- Metric 1: Years of Innovation -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="timer" class="w-12 h-12 text-accent mx-auto mb-3"></i>
+                        <p class="text-5xl font-extrabold text-white">2+</p>
+                        <p class="text-lg text-slate-400 font-semibold mt-1">Years of Innovation</p>
+                    </div>
+
+                    <!-- Metric 2: Projects Delivered -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="package" class="w-12 h-12 text-accent mx-auto mb-3"></i>
+                        <p class="text-5xl font-extrabold text-white">200+</p>
+                        <p class="text-lg text-slate-400 font-semibold mt-1">Projects Delivered</p>
+                    </div>
+
+                    <!-- Metric 3: Client Satisfaction -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="award" class="w-12 h-12 text-accent mx-auto mb-3"></i>
+                        <p class="text-5xl font-extrabold text-white">99%</p>
+                        <p class="text-lg text-slate-400 font-semibold mt-1">Client Satisfaction</p>
+                    </div>
+
+                    <!-- Metric 4: Certified Experts -->
+                    <div class="p-4 rounded-xl">
+                        <i data-lucide="users" class="w-12 h-12 text-accent mx-auto mb-3"></i>
+                        <p class="text-5xl font-extrabold text-white">15+</p>
+                        <p class="text-lg text-slate-400 font-semibold mt-1">Certified Experts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END Key Achievements Section -->
+
 
         <!-- Featured Services Section -->
         <section id="services" class="py-20 sm:py-28">
@@ -272,55 +324,113 @@
             </div>
         </section>
 
-        <!-- Client Success Stories Section (UPDATED) -->
+        <!-- Client Success Stories Carousel (UPDATED) -->
         <section id="success-stories" class="py-20 sm:py-28 bg-slate-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-lg font-semibold text-accent uppercase tracking-wider mb-1">Results That Speak</span>
+                <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-white mb-10">Client Success, Measurable Impact</h2>
+                
+                <div class="relative overflow-hidden">
+                    <!-- Carousel Container -->
+                    <div id="testimonial-carousel" class="flex transition-transform duration-500 ease-in-out">
+                        
+                        <!-- Testimonial 1: Cloud Migration -->
+                        <div class="w-full flex-shrink-0 bg-card p-8 rounded-xl shadow-2xl border border-slate-700">
+                            <i data-lucide="quote" class="w-8 h-8 text-accent mx-auto mb-4"></i>
+                            <p class="text-xl italic font-semibold text-slate-200 mb-6">
+                                "Ntrix delivered a seamless cloud migration, cutting our infrastructure costs by 30% and boosting system uptime to 99.99%. Their team was exceptional."
+                            </p>
+                            <div class="font-semibold text-white">Elias Okafor</div>
+                            <div class="text-sm text-slate-400">Chief Operations Officer, Horizon Logistics</div>
+                        </div>
+
+                        <!-- Testimonial 2: RPA Automation -->
+                        <div class="w-full flex-shrink-0 bg-card p-8 rounded-xl shadow-2xl border border-slate-700">
+                            <i data-lucide="quote" class="w-8 h-8 text-accent mx-auto mb-4"></i>
+                            <p class="text-xl italic font-semibold text-slate-200 mb-6">
+                                "The custom RPA solution implemented by Ntrix automated our loan processing department, allowing us to handle double the volume without hiring new staff. True digital transformation."
+                            </p>
+                            <div class="font-semibold text-white">Jane Adewale</div>
+                            <div class="text-sm text-slate-400">Head of Digital Strategy, Aura Bank</div>
+                        </div>
+
+                        <!-- Testimonial 3: Cybersecurity Infrastructure -->
+                        <div class="w-full flex-shrink-0 bg-card p-8 rounded-xl shadow-2xl border border-slate-700">
+                            <i data-lucide="quote" class="w-8 h-8 text-accent mx-auto mb-4"></i>
+                            <p class="text-xl italic font-semibold text-slate-200 mb-6">
+                                "We relied on Ntrix to overhaul our entire cybersecurity infrastructure. The zero-trust model they deployed gave us confidence and passed every third-party compliance audit flawlessly."
+                            </p>
+                            <div class="font-semibold text-white">Chidi Emeka</div>
+                            <div class="text-sm text-slate-400">VP of Security, Apex Financial</div>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Carousel Navigation (Left/Right Buttons) -->
+                    <button id="prev-btn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-slate-800 p-2 rounded-full text-white hover:bg-slate-700 transition duration-300 ml-2 shadow-lg">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="next-btn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-slate-800 p-2 rounded-full text-white hover:bg-slate-700 transition duration-300 mr-2 shadow-lg">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                
+                <!-- Carousel Dots/Indicators -->
+                <div id="carousel-indicators" class="flex justify-center mt-6 space-x-3">
+                    <!-- Dots generated by JS -->
+                </div>
+            </div>
+        </section>
+        <!-- END Client Success Stories Carousel -->
+        
+        <!-- About Us Section -->
+        <section id="about-us" class="py-20 sm:py-28">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-lg font-semibold text-accent uppercase tracking-wider mb-1">Results That Speak</span>
-                    <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-white">Client Success, Measurable Impact</h2>
-                    <p class="max-w-3xl mx-auto text-xl text-slate-300 mt-4">See how Ntrix Technologies empowers businesses to achieve digital excellence.</p>
+                    <span class="text-lg font-semibold text-accent uppercase tracking-wider mb-1">Our Foundation</span>
+                    <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-white">Who We Are and What We Believe</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     
-                    <!-- Story 1: Cloud Migration -->
-                    <div class="bg-card p-8 rounded-xl shadow-2xl border border-slate-700">
-                        <i data-lucide="quote" class="w-8 h-8 text-accent mb-4"></i>
-                        <p class="text-xl italic font-semibold text-slate-200 mb-6">
-                            "Ntrix delivered a seamless cloud migration, cutting our infrastructure costs by 30% and boosting system uptime to 99.99%. Their team was exceptional."
+                    <!-- Mission -->
+                    <div class="bg-card p-8 rounded-xl shadow-2xl border-t-4 border-accent">
+                        <i data-lucide="target" class="w-8 h-8 text-accent mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Our Mission</h3>
+                        <p class="text-slate-400">
+                            To empower organizations across Africa and beyond with cutting-edge, resilient, and customized technology solutions that drive efficiency, ensure security, and accelerate sustainable growth.
                         </p>
-                        <div class="font-semibold text-white">Elias Okafor</div>
-                        <div class="text-sm text-slate-400">Chief Operations Officer, Horizon Logistics</div>
                     </div>
 
-                    <!-- Story 2: RPA Automation -->
-                    <div class="bg-card p-8 rounded-xl shadow-2xl border border-slate-700">
-                        <i data-lucide="quote" class="w-8 h-8 text-accent mb-4"></i>
-                        <p class="text-xl italic font-semibold text-slate-200 mb-6">
-                            "The custom RPA solution implemented by Ntrix automated our loan processing department, allowing us to handle double the volume without hiring new staff. True digital transformation."
+                    <!-- Vision -->
+                    <div class="bg-card p-8 rounded-xl shadow-2xl border-t-4 border-accent">
+                        <i data-lucide="eye" class="w-8 h-8 text-accent mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Our Vision</h3>
+                        <p class="text-slate-400">
+                            To be the leading technology partner recognized globally for transforming the digital landscape, setting the standard for innovation, quality service, and client success.
                         </p>
-                        <div class="font-semibold text-white">Jane Adewale</div>
-                        <div class="text-sm text-slate-400">Head of Digital Strategy, Aura Bank</div>
                     </div>
 
-                    <!-- Story 3: Cybersecurity Infrastructure (REPLACED) -->
-                    <div class="bg-card p-8 rounded-xl shadow-2xl border border-slate-700">
-                        <i data-lucide="quote" class="w-8 h-8 text-accent mb-4"></i>
-                        <p class="text-xl italic font-semibold text-slate-200 mb-6">
-                            "We relied on Ntrix to overhaul our entire cybersecurity infrastructure. The zero-trust model they deployed gave us confidence and passed every third-party compliance audit flawlessly."
-                        </p>
-                        <div class="font-semibold text-white">Chidi Emeka</div>
-                        <div class="text-sm text-slate-400">VP of Security, Apex Financial</div>
+                    <!-- Core Values Intro -->
+                    <div class="bg-card p-8 rounded-xl shadow-2xl border-t-4 border-accent">
+                        <i data-lucide="heart" class="w-8 h-8 text-accent mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Core Values</h3>
+                        <p class="text-slate-400 mb-4">These principles guide every decision and interaction we have:</p>
+                        <ul class="text-slate-300 text-base space-y-2">
+                            <li><span class="font-semibold text-accent pr-1">&bull;</span> <strong>Innovation:</strong> Constantly pursuing the best future-proof solutions.</li>
+                            <li><span class="font-semibold text-accent pr-1">&bull;</span> <strong>Integrity:</strong> Operating with transparency and ethical responsibility.</li>
+                            <li><span class="font-semibold text-accent pr-1">&bull;</span> <strong>Excellence:</strong> Committing to the highest standards of quality and service delivery.</li>
+                            <li><span class="font-semibold text-accent pr-1">&bull;</span> <strong>Partnership:</strong> Building deep, collaborative relationships with our clients.</li>
+                        </ul>
                     </div>
 
                 </div>
             </div>
         </section>
-        <!-- END Client Success Stories Section -->
-
+        <!-- END About Us Section -->
 
         <!-- Partners and Clients Section -->
-        <section id="partners" class="py-16 sm:py-24">
+        <section id="partners" class="py-16 sm:py-24 bg-slate-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <!-- Updated Title -->
                 <h2 class="text-3xl font-bold text-white mb-12">Our Partners</h2>
@@ -340,17 +450,102 @@
             </div>
         </section>
 
-        <!-- CTA/Contact Banner -->
-        <section id="contact" class="py-20 bg-accent">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-bold text-white mb-4">Ready to Future-Proof Your Business?</h2>
-                <p class="text-xl text-rose-100 mb-8">Contact Ntrix Technologies today to begin shaping your digital roadmap.</p>
-                <!-- CTA Button: Updated to WhatsApp link -->
-                <a href="https://wa.link/oc3j0f" target="_blank" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-semibold rounded-xl shadow-lg text-accent bg-white hover:bg-slate-100 transition duration-300 transform hover:scale-105">
-                    Get Expert Services
-                </a>
+        <!-- Structured Contact Section (REPLACED CTA BANNER) -->
+        <section id="contact" class="py-20 sm:py-28 bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-lg font-semibold text-accent uppercase tracking-wider mb-1">Get in Touch</span>
+                    <h2 class="mt-2 text-4xl sm:text-5xl font-bold text-white">Let's Discuss Your Digital Roadmap</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                    <!-- Contact Details -->
+                    <div class="space-y-8">
+                        <h3 class="text-2xl font-semibold text-white">Connect Directly</h3>
+                        <p class="text-slate-400">We respond quickly! Reach out via phone, WhatsApp, or email, or send us a message using the contact form.</p>
+                        
+                        <div class="space-y-5">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-accent flex-shrink-0 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Our Location</h4>
+                                    <!-- Location updated with company name -->
+                                    <p class="text-slate-400">Victoria Island, Lagos, Nigeria (Ntrix Technologies HQ)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="mail" class="w-6 h-6 text-accent flex-shrink-0 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">Email Us</h4>
+                                    <p class="text-slate-400">info@ntrixtech.com.ng</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="phone" class="w-6 h-6 text-accent flex-shrink-0 mr-3 mt-1"></i>
+                                <div>
+                                    <!-- REMOVED: (with Country Code) -->
+                                    <h4 class="text-lg font-semibold text-white">Call Us</h4>
+                                    <p class="text-slate-400">+2348186610626</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="message-square" class="w-6 h-6 text-accent flex-shrink-0 mr-3 mt-1"></i>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white">WhatsApp</h4>
+                                    <a href="https://wa.link/oc3j0f" target="_blank" class="text-slate-400 hover:text-accent transition duration-200">Start a chat now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Static Forms) -->
+                    <div class="bg-card p-8 rounded-xl shadow-2xl border border-slate-700">
+                        <!-- TITLE ADDED -->
+                        <h3 class="text-2xl font-semibold text-white mb-6 text-center">Send Us a Message</h3>
+                        <div id="form-success-message" class="hidden p-4 mb-4 text-center rounded-lg text-white bg-green-600 font-semibold">
+                            Thank you. Form Submitted
+                        </div>
+                        <form id="contact-form" action="https://api.staticforms.xyz/submit" method="POST" class="space-y-6"> 
+                            <input type="hidden" name="redirectTo" value="not-used-in-fetch-but-good-practice">
+                            <input type="hidden" name="subject" value="New Inquiry from Ntrix Website">
+                            <input type="hidden" name="message" value="sf_2jm7ki8lhm77kni7243gif79"> 
+
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-accent focus:border-accent"> 
+                            </div>
+                            <!-- FIELD: Company Name -->
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-slate-300 mb-2">Company Name</label>
+                                <input type="text" id="company" name="company" placeholder="Acme Corp" required class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-accent focus:border-accent"> 
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-accent focus:border-accent"> 
+                            </div>
+                            
+                            <!-- FIELD: Phone Number -->
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+234 (XXX) XXX XXXX" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-accent focus:border-accent"> 
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="How can Ntrix Technologies help your business?" required class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-accent focus:border-accent"></textarea> 
+                            </div>
+                              
+                            <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg shadow-sm text-white bg-accent hover:bg-rose-600 transition duration-300 transform hover:scale-[1.01]">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
+        <!-- END Structured Contact Section -->
+
 
     </main>
 
@@ -372,7 +567,7 @@
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#about" class="text-slate-400 hover:text-accent transition duration-200">About Us</a></li>
+                        <li><a href="#about-us" class="text-slate-400 hover:text-accent transition duration-200">About Us</a></li>
                         <li><a href="#services" class="text-slate-400 hover:text-accent transition duration-200">Our Services</a></li>
                         <!-- Updated Navigation Link -->
                         <li><a href="#success-stories" class="text-slate-400 hover:text-accent transition duration-200">Success Stories</a></li>
@@ -390,21 +585,25 @@
                     </ul>
                 </div>
 
-                <!-- Contact Info -->
+                <!-- Contact Info (Simplified, now pointing to contact section) -->
                 <div class="col-span-2 md:col-span-1">
                     <h4 class="text-lg font-semibold text-white mb-4">Get In Touch</h4>
+                    <!-- Phone Number is now a clickable link (tel:) -->
                     <p class="text-sm text-slate-400">
-                        <i data-lucide="phone" class="w-4 h-4 inline-block mr-2 text-accent"></i> Call: +2348186610626
+                        <i data-lucide="phone" class="w-4 h-4 inline-block mr-2 text-accent"></i> 
+                        <a href="tel:+2348186610626" class="hover:text-accent transition duration-200">+2348186610626</a>
+                    </p>
+                    <!-- Email is now a clickable link (mailto:) -->
+                    <p class="text-sm text-slate-400 mt-2">
+                        <i data-lucide="mail" class="w-4 h-4 inline-block mr-2 text-accent"></i> 
+                        <a href="mailto:info@ntrixtech.com.ng" class="hover:text-accent transition duration-200">info@ntrixtech.com.ng</a>
                     </p>
                     <p class="text-sm text-slate-400 mt-2">
-                        <i data-lucide="mail" class="w-4 h-4 inline-block mr-2 text-accent"></i> info@ntrixtech.com.ng
-                    </p>
-                    <p class="text-sm text-slate-400 mt-2">
-                        <a href="https://wa.link/oc3j0f" target="_blank" class="text-slate-400 hover:text-accent transition duration-200 flex items-center">
+                         <a href="https://wa.link/oc3j0f" target="_blank" class="text-slate-400 hover:text-accent transition duration-200 flex items-center">
                             <i data-lucide="message-square" class="w-4 h-4 inline-block mr-2 text-accent"></i> WhatsApp Link
                         </a>
                     </p>
-                    <!-- Address Updated -->
+                    <!-- Address Updated to full name -->
                     <p class="text-sm text-slate-400 mt-2">
                         <i data-lucide="map-pin" class="w-4 h-4 inline-block mr-2 text-accent"></i> Victoria Island, Lagos, Nigeria
                     </p>
@@ -418,12 +617,12 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu and Lucide Icons -->
+    <!-- JavaScript for Mobile Menu, Lucide Icons, Carousel, and Form Submission -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Mobile Menu Toggler
+        // --- Mobile Menu Toggler ---
         const button = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
 
@@ -440,6 +639,112 @@
                 button.setAttribute('aria-expanded', 'false');
             });
         });
+
+        // --- Testimonial Carousel Logic ---
+        const carousel = document.getElementById('testimonial-carousel');
+        const slides = carousel ? carousel.children.length : 0;
+        const indicatorsContainer = document.getElementById('carousel-indicators');
+        let currentIndex = 0;
+
+        if (carousel && slides > 0) {
+            // Function to update the carousel display
+            const updateCarousel = () => {
+                const offset = -currentIndex * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+                updateIndicators();
+            };
+
+            // Function to update the dots/indicators
+            const updateIndicators = () => {
+                // Clear existing dots
+                indicatorsContainer.innerHTML = '';
+                
+                for (let i = 0; i < slides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('carousel-dot', 'rounded-full', 'hover:bg-slate-500');
+                    if (i === currentIndex) {
+                        dot.classList.add('active');
+                    }
+                    dot.addEventListener('click', () => {
+                        currentIndex = i;
+                        updateCarousel();
+                    });
+                    indicatorsContainer.appendChild(dot);
+                }
+            };
+
+            // Navigation functions
+            document.getElementById('next-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides;
+                updateCarousel();
+            });
+
+            document.getElementById('prev-btn').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides) % slides;
+                updateCarousel();
+            });
+            
+            // Initialize carousel
+            updateCarousel();
+        }
+
+        // --- Static Forms Submission Handler ---
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success-message');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                // Prepare payload for Static Forms (must include API key)
+                const payload = {
+                    ...data,
+                    // Hardcoded API key provided by the user
+                    'replyTo': data.email,
+                    'accessKey': 'sf_2jm7ki8lhm77kni7243gif79' 
+                };
+                
+                // Show loading indicator or disable button here if desired
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (response.ok) {
+                        // Success: Show message and reset form
+                        successMessage.classList.remove('hidden');
+                        contactForm.reset();
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.classList.add('hidden');
+                        }, 5000);
+
+                    } else {
+                        // Handle potential error from the API (though Static Forms usually returns 200)
+                        console.error('Static Forms Error:', response.statusText);
+                        // NOTE: Using console.error instead of alert as per instructions
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    // NOTE: Using console.error instead of alert as per instructions
+                } finally {
+                    // Re-enable button
+                    submitButton.textContent = 'Send Message';
+                    submitButton.disabled = false;
+                }
+            });
+        }
     </script>
 </body>
 </html>
