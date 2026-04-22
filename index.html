@@ -1,405 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXR0D1PPLL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZXR0D1PPLL');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon: NT SVG -->
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9IiMwRjE3MkEiLz48dGV4dCB4PSI1MCUiIHk9IjcwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNGNDNGNUUiPk5UPC90ZXh0Pjwvc3ZnPg==" type="image/svg+xml">
-    <title>Ntrix Technologies | Leading Digital Transformation</title>
-    
+    <!-- Favicon: Updated to match NTRIX TECH brand identity -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjMDIwNjE3Ii8+PHRleHQgeD0iNSIgeT0iMjIiIGZvbnQtZmFtaWx5PSJQbHVzIEpha2FydGEgU2Fucywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI0Y4RkFGQyI+TjwvdGV4dD48dGV4dCB4PSIxNyIgeT0iMjIiIGZvbnQtZmFtaWx5PSJQbHVzIEpha2FydGEgU2Fucywgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI0Y0M0Y1RSI+VDwvdGV4dD48L3N2Zz4=" type="image/svg+xml">
+    <title>Ntrix Technologies | Building Africa's Digital Future</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
-                    colors: {
-                        obsidian: '#020617',
-                        slate_custom: '#0F172A',
-                        rose_accent: '#F43F5E',
-                    }
+                    colors: { obsidian: '#020617', slate_custom: '#0F172A', rose_accent: '#F43F5E' }
                 }
             }
         }
     </script>
-
     <style>
         body { background-color: #020617; color: #F8FAFC; scroll-behavior: smooth; }
-        
-        .glass-header {
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .bento-card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.2) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bento-card:hover {
-            border-color: rgba(244, 63, 94, 0.5);
-            transform: translateY(-10px);
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.4) 100%);
-            box-shadow: 0 10px 40px -10px rgba(244, 63, 94, 0.25);
-        }
-
-        .bento-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at top left, rgba(244, 63, 94, 0.1), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-        }
-
-        .bento-card:hover::after {
-            opacity: 1;
-        }
-
-        .aurora-glow {
-            filter: blur(100px);
-            opacity: 0.15;
-            background: radial-gradient(circle at center, #F43F5E 0%, transparent 70%);
-        }
-
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .glass-header { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .aurora-glow { filter: blur(120px); opacity: 0.2; background: radial-gradient(circle at center, #F43F5E 0%, transparent 70%); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
-        input, textarea {
-            background: rgba(15, 23, 42, 0.5) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            transition: border-color 0.3s ease;
-            color: white !important;
-        }
-        input:focus, textarea:focus {
-            border-color: #F43F5E !important;
-            outline: none;
-        }
+        .hero-gradient { background: radial-gradient(circle at center, rgba(244, 63, 94, 0.15) 0%, transparent 80%); }
     </style>
 </head>
 <body class="overflow-x-hidden">
-
-    <!-- Navbar -->
     <nav class="fixed top-0 w-full z-[100] glass-header">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3 group">
-                <div id="text-logo" class="text-2xl font-black tracking-tighter">
-                    NTRIX <span class="text-rose_accent">TECH</span>
-                </div>
+            <a href="index.html" class="flex items-center group text-2xl font-black tracking-tighter">
+                NTRIX<span class="text-rose_accent">TECH</span>
             </a>
-
             <div class="hidden lg:flex items-center space-x-10 text-[11px] font-black uppercase tracking-[0.2em]">
-                <a href="#what-we-do" class="hover:text-rose_accent transition-colors">Expertise</a>
-                <a href="#services" class="hover:text-rose_accent transition-colors">Solutions</a>
-                <a href="#success-stories" class="hover:text-rose_accent transition-colors">Client Success</a>
-                <a href="#about-us" class="hover:text-rose_accent transition-colors">About</a>
-                <a href="#contact" class="bg-rose_accent px-6 py-3 rounded-full text-white hover:bg-rose-600 transition-all shadow-lg shadow-rose-500/20 active:scale-95 text-center">
-                    Get Started
-                </a>
+                <a href="expertise.html" class="hover:text-rose_accent transition-colors">Expertise</a>
+                <a href="solutions.html" class="hover:text-rose_accent transition-colors">Solutions</a>
+                <a href="success.html" class="hover:text-rose_accent transition-colors">Success</a>
+                <a href="about.html" class="hover:text-rose_accent transition-colors">About</a>
+                <a href="contact.html" class="bg-rose_accent px-6 py-3 rounded-full text-white hover:bg-rose-600 transition-all shadow-lg shadow-rose-500/20 active:scale-95 text-center">Get Started</a>
             </div>
-
-            <button id="nav-toggle" class="lg:hidden p-2"><i data-lucide="menu"></i></button>
+            <button id="nav-toggle" class="lg:hidden p-2 text-white"><i data-lucide="menu"></i></button>
         </div>
     </nav>
 
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="fixed inset-0 z-[110] hidden">
-        <div class="p-8 flex flex-col h-full bg-obsidian/95 backdrop-blur-xl">
-            <div class="flex justify-between items-center mb-12">
-                <span class="text-xl font-bold">NTRIX</span>
-                <button id="close-menu"><i data-lucide="x"></i></button>
-            </div>
-            <div class="flex flex-col space-y-8 text-2xl font-bold text-white">
-                <a href="#what-we-do" onclick="closeNav()">Expertise</a>
-                <a href="#services" onclick="closeNav()">Solutions</a>
-                <a href="#success-stories" onclick="closeNav()">Success Stories</a>
-                <a href="#about-us" onclick="closeNav()">About Us</a>
-                <a href="#contact" onclick="closeNav()">Contact</a>
-            </div>
-        </div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-obsidian hidden flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="close-menu" class="absolute top-6 right-6"><i data-lucide="x"></i></button>
+        <a href="expertise.html" class="hover:text-rose_accent">Expertise</a>
+        <a href="solutions.html" class="hover:text-rose_accent">Solutions</a>
+        <a href="success.html" class="hover:text-rose_accent">Success</a>
+        <a href="about.html" class="hover:text-rose_accent">About</a>
+        <a href="contact.html" class="text-rose_accent">Get Started</a>
     </div>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center pt-24 overflow-hidden text-center">
-        <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] aurora-glow rounded-full"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 lg:px-12 relative z-10 w-full">
-            <div class="max-w-5xl mx-auto">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-black uppercase tracking-[0.3em] text-rose_accent mb-8 reveal">
-                    <span>Precision in Technology</span>
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center pt-32 overflow-hidden hero-gradient">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-rose_accent/20 bg-rose_accent/5 text-[10px] font-black uppercase tracking-[0.3em] text-rose_accent mb-10 reveal">
+                    <span class="w-2 h-2 rounded-full bg-rose_accent animate-pulse mr-2"></span> Next-Gen Infrastructure
                 </div>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[0.95] mb-10 reveal">
+                <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-[0.85] mb-12 reveal">
                     Building <span class="text-rose_accent">Africa's</span> Future <br class="hidden md:block">
                     <span class="italic font-light text-slate-300">One Business at a Time.</span>
                 </h1>
-                
-                <!-- Better Aligned and Neater Text Block -->
-                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-14 leading-relaxed reveal">
+                <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto mb-16 leading-relaxed reveal">
                     As one of Africa’s leading technology partners, we specialize in providing innovative, end-to-end solutions tailored to the unique needs of small, medium, and large-scale organizations. Our commitment is to bridge the gap between complex technology and sustainable business growth.
                 </p>
-
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 reveal">
-                    <a href="#contact" class="group relative px-10 py-5 bg-rose_accent rounded-full font-bold text-white overflow-hidden transition-all hover:pr-14 shadow-2xl shadow-rose-600/20 active:scale-95">
-                        <span class="relative z-10">Start Your Transformation</span>
-                        <i data-lucide="arrow-right" class="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all"></i>
-                    </a>
-                    <a href="#services" class="px-10 py-5 border border-white/10 rounded-full font-bold text-white hover:bg-white/5 backdrop-blur-sm transition-all active:scale-95">
-                        Explore Solutions
+                    <a href="contact.html" class="px-12 py-6 bg-rose_accent rounded-full font-bold text-white shadow-2xl shadow-rose-600/30 active:scale-95 hover:bg-rose-600 transition-all text-lg">Discuss Your Project</a>
+                    <a href="solutions.html" class="px-12 py-6 border border-white/10 rounded-full font-bold text-white hover:bg-white/5 transition-all text-lg flex items-center group">
+                        Explore Our Solutions <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Performance Metrics -->
-    <section class="py-24 border-y border-white/5 bg-obsidian">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24 text-center">
+    <!-- Detailed Stats -->
+    <section class="py-32 border-y border-white/5 bg-obsidian relative overflow-hidden">
+        <div class="absolute inset-0 aurora-glow opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-24">
                 <div class="reveal">
-                    <h3 class="text-5xl font-black text-white mb-2">2<span class="text-rose_accent">+</span></h3>
-                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Years of Innovation</p>
+                    <h3 class="text-6xl font-black text-white mb-3">02<span class="text-rose_accent">+</span></h3>
+                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Years of Hyper-Growth</p>
+                    <p class="text-sm text-slate-600 mt-2">Delivering excellence since day one.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 100ms;">
-                    <h3 class="text-5xl font-black text-white mb-2">200<span class="text-rose_accent">+</span></h3>
-                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Projects Delivered</p>
+                    <h3 class="text-6xl font-black text-white mb-3">200<span class="text-rose_accent">+</span></h3>
+                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Global Deliveries</p>
+                    <p class="text-sm text-slate-600 mt-2">Bespoke solutions across 5 sectors.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 200ms;">
-                    <h3 class="text-5xl font-black text-white mb-2">99<span class="text-rose_accent">%</span></h3>
-                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Satisfaction Rate</p>
+                    <h3 class="text-6xl font-black text-white mb-3">15<span class="text-rose_accent">+</span></h3>
+                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Core Specialists</p>
+                    <p class="text-sm text-slate-600 mt-2">PhDs, Engineers, and Strategists.</p>
                 </div>
                 <div class="reveal" style="transition-delay: 300ms;">
-                    <h3 class="text-5xl font-black text-white mb-2">15<span class="text-rose_accent">+</span></h3>
-                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Certified Experts</p>
+                    <h3 class="text-6xl font-black text-white mb-3">99.9<span class="text-rose_accent">%</span></h3>
+                    <p class="text-xs font-black uppercase tracking-widest text-slate-500">Uptime Record</p>
+                    <p class="text-sm text-slate-600 mt-2">Enterprise-grade reliability.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Expertise Introduction -->
-    <section id="what-we-do" class="py-32">
+    <!-- Why Choose Ntrix - Detailed Section -->
+    <section class="py-32 bg-slate_custom/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid lg:grid-cols-2 gap-20 items-center mb-32">
-                <div class="reveal">
-                    <h2 class="text-4xl md:text-6xl font-extrabold mb-8 text-white">All-in-One Digital <br><span class="text-rose_accent underline decoration-white/10 underline-offset-8">Transformation</span></h2>
-                </div>
-                <div class="reveal" style="transition-delay: 100ms;">
-                    <p class="text-xl text-slate-400 leading-relaxed">
-                        At Ntrix Technologies, we are your one-stop shop for all your digital needs. We help businesses of all sizes leverage technology to gain a competitive edge in an evolving market.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bento-card p-12 rounded-[2.5rem] reveal">
-                    <i data-lucide="zap" class="text-rose_accent mb-6 w-10 h-10"></i>
-                    <h4 class="text-2xl font-bold mb-4 text-white">Optimized Efficiency</h4>
-                    <p class="text-slate-400 leading-relaxed">Streamlining workflows with intelligent automation to slash operational overhead.</p>
-                </div>
-                <div class="bento-card p-12 rounded-[2.5rem] reveal">
-                    <i data-lucide="shield-check" class="text-blue-500 mb-6 w-10 h-10"></i>
-                    <h4 class="text-2xl font-bold mb-4 text-white">Cyber Resilience</h4>
-                    <p class="text-slate-400 leading-relaxed">Top-tier security protocols designed to protect your most critical digital assets.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Grid -->
-    <section id="services" class="py-32 bg-slate_custom/30">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-24 reveal">
-                <h3 class="text-4xl font-bold mb-4 text-white">Core Expertise</h3>
-                <div class="w-24 h-1 bg-rose_accent mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <script>
-                    const svcs = [
-                        { i: 'trello', t: 'Digital Transformation', d: 'Legacy modernization and full ecosystem integration.' },
-                        { i: 'bar-chart-3', t: 'Analytics & Reporting', d: 'Actionable intelligence through custom predictive models.' },
-                        { i: 'graduation-cap', t: 'Expert Training', d: 'Hands-on enablement for your internal technology teams.' },
-                        { i: 'lock', t: 'Security Optimization', d: 'Risk assessments and Zero Trust architecture deployment.' },
-                        { i: 'cloud', t: 'Cloud Management', d: 'AWS, Azure, and Google Cloud multi-cloud architecture.' },
-                        { i: 'bot', t: 'RPA & Automation', d: 'Intelligent software bots to automate repetitive tasks.' },
-                        { i: 'cpu', t: 'Computer Hardware', d: 'Sourcing and deployment of robust enterprise infrastructure.' },
-                        { i: 'globe', t: 'Website Building', d: 'High-performance, conversion-focused web development.' },
-                        { i: 'code', t: 'Software Development', d: 'Bespoke applications designed for specific business logic.' }
-                    ];
-                    document.write(svcs.map((s, idx) => `
-                        <div class="bento-card p-8 rounded-3xl reveal" style="transition-delay: ${idx * 50}ms">
-                            <div class="w-12 h-12 bg-rose_accent/10 rounded-2xl flex items-center justify-center text-rose_accent mb-6 transition-transform group-hover:scale-110">
-                                <i data-lucide="${s.i}"></i>
+            <div class="flex flex-col lg:flex-row gap-24 items-center">
+                <div class="lg:w-1/2 reveal">
+                    <h2 class="text-5xl font-black mb-12 leading-tight">Global Engineering <br> <span class="text-rose_accent">Local Intuition.</span></h2>
+                    <div class="space-y-10">
+                        <div class="flex gap-6">
+                            <div class="w-16 h-16 bg-rose_accent/10 rounded-2xl flex-shrink-0 flex items-center justify-center text-rose_accent">
+                                <i data-lucide="zap" class="w-8 h-8"></i>
                             </div>
-                            <h4 class="text-xl font-bold mb-3 text-white">${s.t}</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed mb-8">${s.d}</p>
-                            <a href="#contact" class="inline-flex items-center text-[10px] font-black uppercase tracking-widest text-rose_accent hover:translate-x-2 transition-transform">
-                                Learn More <i data-lucide="chevron-right" class="w-3 h-3 ml-1"></i>
-                            </a>
-                        </div>
-                    `).join(''));
-                </script>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Hub -->
-    <section id="success-stories" class="py-32 overflow-hidden">
-        <div class="max-w-5xl mx-auto px-6 lg:px-12 text-center">
-            <h2 class="text-4xl font-extrabold mb-16 reveal text-white">Proven Success</h2>
-            
-            <div class="relative">
-                <div id="test-carousel" class="flex transition-transform duration-700 ease-in-out text-white">
-                    <div class="min-w-full px-4 text-white text-left">
-                        <div class="bg-slate_custom p-12 rounded-[3rem] border border-white/5">
-                            <i data-lucide="quote" class="text-rose_accent w-12 h-12 mb-8 opacity-20"></i>
-                            <p class="text-2xl font-medium text-slate-200 mb-10 leading-relaxed italic">"Ntrix delivered a seamless cloud migration, cutting our infrastructure costs by 30% and boosting system uptime to 99.99%. Truly exceptional."</p>
                             <div>
-                                <p class="font-bold text-white text-lg">Elias Okafor</p>
-                                <p class="text-rose_accent font-bold text-xs uppercase tracking-widest mt-1">COO, Tidex Global Solutions</p>
+                                <h4 class="text-xl font-bold mb-2">High-Velocity Development</h4>
+                                <p class="text-slate-400">We utilize a proprietary agile framework that reduces time-to-market by 40% compared to traditional dev shops.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="min-w-full px-4 text-white text-left">
-                        <div class="bg-slate_custom p-12 rounded-[3rem] border border-white/5">
-                            <i data-lucide="quote" class="text-rose_accent w-12 h-12 mb-8 opacity-20"></i>
-                            <p class="text-2xl font-medium text-slate-200 mb-10 leading-relaxed italic">"The Zero-Trust security model they deployed overhauled our infrastructure. We passed our compliance audit with zero findings."</p>
+                        <div class="flex gap-6">
+                            <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex-shrink-0 flex items-center justify-center text-blue-400">
+                                <i data-lucide="shield-check" class="w-8 h-8"></i>
+                            </div>
                             <div>
-                                <p class="font-bold text-white text-lg">Tochi Solomon</p>
-                                <p class="text-rose_accent font-bold text-xs uppercase tracking-widest mt-1">CEO, ProlificCode</p>
+                                <h4 class="text-xl font-bold mb-2">Security-First Culture</h4>
+                                <p class="text-slate-400">Every line of code is audited for vulnerabilities. We build with a Zero-Trust mindset as the default standard.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex-shrink-0 flex items-center justify-center text-purple-400">
+                                <i data-lucide="users" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Partner, Not Vendor</h4>
+                                <p class="text-slate-400">We embed ourselves in your business goals, ensuring technology serves the bottom line, not just the IT department.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex justify-center mt-12 space-x-4">
-                    <button id="car-prev" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-rose_accent hover:border-rose_accent transition-all text-white">
-                        <i data-lucide="chevron-left"></i>
-                    </button>
-                    <button id="car-next" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-rose_accent hover:border-rose_accent transition-all text-white">
-                        <i data-lucide="chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about-us" class="py-32 bg-obsidian border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid lg:grid-cols-3 gap-12">
-                <div class="lg:col-span-2 reveal">
-                    <h2 class="text-5xl font-extrabold mb-12 tracking-tighter text-white">Who We Are & What We Believe</h2>
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <div class="p-8 bg-slate_custom rounded-3xl border border-white/5 bento-card text-white">
-                            <h3 class="text-rose_accent font-black text-xs uppercase tracking-widest mb-4">Mission</h3>
-                            <p class="text-slate-400">To empower organizations globally with customized technology that ensures security and accelerates growth.</p>
-                        </div>
-                        <div class="p-8 bg-slate_custom rounded-3xl border border-white/5 bento-card text-white">
-                            <h3 class="text-rose_accent font-black text-xs uppercase tracking-widest mb-4">Vision</h3>
-                            <p class="text-slate-400">To be the recognized leader in digital transformation and innovative engineering excellence.</p>
-                        </div>
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4 reveal" style="transition-delay: 200ms;">
+                    <div class="bg-white/5 h-64 rounded-[3rem] p-8 border border-white/10 flex flex-col justify-end">
+                        <h5 class="font-bold text-rose_accent">01. Discovery</h5>
                     </div>
-                </div>
-                <div class="reveal pt-4">
-                    <h3 class="text-2xl font-bold mb-8 text-white">Core Values</h3>
-                    <ul class="space-y-6">
-                        <li class="flex items-start"><span class="text-rose_accent mr-4 font-black">01</span> <span class="text-slate-300"><strong>Innovation:</strong> Pursuing future-proof solutions.</span></li>
-                        <li class="flex items-start"><span class="text-rose_accent mr-4 font-black">02</span> <span class="text-slate-300"><strong>Integrity:</strong> Absolute transparency in engagement.</span></li>
-                        <li class="flex items-start"><span class="text-rose_accent mr-4 font-black">03</span> <span class="text-slate-300"><strong>Excellence:</strong> The highest standards of service delivery.</span></li>
-                        <li class="flex items-start"><span class="text-rose_accent mr-4 font-black">04</span> <span class="text-slate-300"><strong>Partnership:</strong> Deep collaborative client relationships.</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-32">
-        <div class="max-w-7xl mx-auto px-4 lg:px-12">
-            <div class="grid lg:grid-cols-2 gap-24 items-start">
-                <div class="reveal">
-                    <h2 class="text-5xl font-extrabold mb-8 tracking-tighter text-white">Let's Discuss Your Roadmap.</h2>
-                    <p class="text-xl text-slate-400 mb-16">Connect with our experts to start scaling your operations today.</p>
-                    
-                    <div class="space-y-12">
-                        <div class="flex items-center space-x-6">
-                            <div class="w-12 h-12 bg-rose_accent/10 rounded-xl flex items-center justify-center text-rose_accent"><i data-lucide="phone"></i></div>
-                            <a href="tel:+2348186610626" class="text-2xl font-bold hover:text-rose_accent transition-colors text-white">+234 818 661 0626</a>
-                        </div>
-                        <div class="flex items-center space-x-6">
-                            <div class="w-12 h-12 bg-rose_accent/10 rounded-xl flex items-center justify-center text-rose_accent"><i data-lucide="mail"></i></div>
-                            <a href="mailto:info@ntrixtech.com.ng" class="text-2xl font-bold hover:text-rose_accent transition-colors text-white">info@ntrixtech.com.ng</a>
-                        </div>
-                        <div class="flex items-center space-x-6">
-                            <div class="w-12 h-12 bg-rose_accent/10 rounded-xl flex items-center justify-center text-rose_accent"><i data-lucide="map-pin"></i></div>
-                            <span class="text-xl font-bold text-white">Victoria Island, Lagos, Nigeria</span>
-                        </div>
+                    <div class="bg-rose_accent/5 h-64 rounded-[3rem] p-8 border border-rose_accent/20 flex flex-col justify-end translate-y-12">
+                        <h5 class="font-bold text-white">02. Design</h5>
                     </div>
-                </div>
-
-                <div class="bento-card p-12 rounded-[3.5rem] reveal">
-                    <h3 class="text-3xl font-bold mb-10 text-center text-white">Send Us a Message</h3>
-                    <div id="form-result" class="hidden mb-10 p-6 bg-green-500/10 border border-green-500/30 rounded-2xl text-green-500 font-bold text-center">
-                        Thank you. Form Submitted
+                    <div class="bg-white/5 h-64 rounded-[3rem] p-8 border border-white/10 flex flex-col justify-end">
+                        <h5 class="font-bold text-white">03. Build</h5>
                     </div>
-                    <form id="contact-form" action="https://api.staticforms.xyz/submit" method="POST" class="space-y-6">
-                        <input type="hidden" name="apiKey" value="sf_2jm7ki8lhm77kni7243gif79">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="name" placeholder="Full Name" required class="p-4 rounded-xl w-full text-white">
-                            <input type="text" name="company" placeholder="Company" required class="p-4 rounded-xl w-full text-white">
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="email" name="email" placeholder="Email Address" required class="p-4 rounded-xl w-full text-white">
-                            <input type="tel" name="phone" placeholder="Phone Number" required class="p-4 rounded-xl w-full text-white">
-                        </div>
-                        <textarea name="message" placeholder="Project Description" rows="4" required class="p-4 rounded-xl w-full text-white"></textarea>
-                        <button type="submit" class="w-full py-5 bg-rose_accent rounded-2xl font-black text-white hover:bg-rose-600 transition-all active:scale-95 shadow-2xl shadow-rose-900/40 uppercase tracking-widest text-sm">
-                            Submit Inquiry
-                        </button>
-                    </form>
+                    <div class="bg-white/5 h-64 rounded-[3rem] p-8 border border-white/10 flex flex-col justify-end translate-y-12">
+                        <h5 class="font-bold text-white">04. Scale</h5>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 bg-obsidian border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center md:text-left">
-            <div class="grid md:grid-cols-3 gap-16 mb-20">
-                <div class="col-span-2">
-                    <h4 class="text-2xl font-black tracking-tighter mb-6 uppercase text-white">NTRIX <span class="text-rose_accent">TECHNOLOGIES</span></h4>
-                    <p class="text-slate-500 max-w-sm leading-relaxed mx-auto md:mx-0">Pioneering digital transformation through innovative engineering across the African continent.</p>
-                </div>
-                <div class="grid grid-cols-2 gap-8 text-sm text-left">
-                    <div class="space-y-4">
-                        <p class="font-black uppercase tracking-widest text-[10px] text-slate-500">Links</p>
-                        <a href="#about-us" class="block text-slate-400 hover:text-rose_accent">About Us</a>
-                        <a href="#services" class="block text-slate-400 hover:text-rose_accent">Services</a>
-                        <a href="#contact" class="block text-slate-400 hover:text-rose_accent">Consultation</a>
+    <footer class="py-24 bg-obsidian border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-4 gap-16 mb-20">
+                <div class="md:col-span-2">
+                    <h4 class="text-2xl font-black mb-8 uppercase">NTRIX<span class="text-rose_accent">TECH</span></h4>
+                    <p class="text-slate-500 max-w-sm mb-12">Bridging the gap between ambitious business goals and world-class technical execution across Africa.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-rose_accent transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-rose_accent transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-rose_accent transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
                     </div>
-                    <div class="space-y-4">
-                        <p class="font-black uppercase tracking-widest text-[10px] text-slate-500">Social</p>
-                        <a href="https://wa.link/oc3j0f" target="_blank" class="block text-slate-400 hover:text-rose_accent">WhatsApp</a>
-                        <a href="mailto:info@ntrixtech.com.ng" class="block text-slate-400 hover:text-rose_accent">Email</a>
+                </div>
+                <div class="space-y-6">
+                    <h5 class="text-xs font-black uppercase tracking-widest text-slate-600">Company</h5>
+                    <div class="flex flex-col space-y-4 text-slate-400">
+                        <a href="about.html" class="hover:text-rose_accent">Our Story</a>
+                        <a href="expertise.html" class="hover:text-rose_accent">Methodology</a>
+                        <a href="contact.html" class="hover:text-rose_accent">Career</a>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h5 class="text-xs font-black uppercase tracking-widest text-slate-600">Expertise</h5>
+                    <div class="flex flex-col space-y-4 text-slate-400">
+                        <a href="solutions.html" class="hover:text-rose_accent">Cloud Strategy</a>
+                        <a href="solutions.html" class="hover:text-rose_accent">Custom SaaS</a>
+                        <a href="solutions.html" class="hover:text-rose_accent">Cyber Security</a>
                     </div>
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/5 flex flex-col md:row justify-between items-center text-[10px] font-black tracking-[0.2em] text-slate-600 uppercase">
+            <div class="pt-12 border-t border-white/5 flex flex-col md:row justify-between items-center text-[10px] font-bold text-slate-600 tracking-[0.3em] uppercase">
                 <p>© 2024 NTRIX TECHNOLOGIES. ALL RIGHTS RESERVED.</p>
-                <div class="flex space-x-8 mt-6 md:mt-0 uppercase">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
+                <div class="flex space-x-8 mt-4 md:mt-0">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
                 </div>
             </div>
         </div>
@@ -407,69 +213,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            if (window.lucide) { lucide.createIcons(); }
-
+            if (window.lucide) lucide.createIcons();
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
             }, { threshold: 0.1 });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-            let cur = 0;
-            const wrp = document.getElementById('test-carousel');
-            if (wrp) {
-                const slds = wrp.children.length;
-                const update = () => { wrp.style.transform = `translateX(-${cur * 100}%)`; };
-                const nextBtn = document.getElementById('car-next');
-                const prevBtn = document.getElementById('car-prev');
-                if (nextBtn) nextBtn.onclick = () => { cur = (cur + 1) % slds; update(); };
-                if (prevBtn) prevBtn.onclick = () => { cur = (cur - 1 + slds) % slds; update(); };
-            }
-
             const menu = document.getElementById('mobile-menu');
-            const navToggle = document.getElementById('nav-toggle');
-            const closeBtn = document.getElementById('close-menu');
-            if (navToggle && menu) { navToggle.onclick = () => menu.classList.remove('hidden'); }
-            if (closeBtn && menu) { closeBtn.onclick = () => menu.classList.add('hidden'); }
-            window.closeNav = () => { if (menu) menu.classList.add('hidden'); };
-
-            const form = document.getElementById('contact-form');
-            const resArea = document.getElementById('form-result');
-            if (form) {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const btn = form.querySelector('button');
-                    if (!btn) return;
-                    const txt = btn.textContent;
-                    btn.disabled = true; 
-                    btn.textContent = 'Processing...';
-                    const data = Object.fromEntries(new FormData(form).entries());
-                    try {
-                        const call = await fetch(form.action, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ ...data, 'replyTo': data.email, 'accessKey': data.apiKey })
-                        });
-                        if (call.ok) {
-                            form.reset();
-                            if (resArea) resArea.classList.remove('hidden');
-                            btn.textContent = txt;
-                            btn.disabled = false;
-                            setTimeout(() => { if (resArea) resArea.classList.add('hidden'); }, 5000);
-                        } else {
-                            btn.textContent = 'Error. Try Again';
-                            btn.disabled = false;
-                        }
-                    } catch (err) {
-                        console.error(err);
-                        btn.textContent = 'Error. Try Again';
-                        btn.disabled = false;
-                    }
-                });
-            }
+            document.getElementById('nav-toggle').onclick = () => menu.classList.remove('hidden');
+            document.getElementById('close-menu').onclick = () => menu.classList.add('hidden');
         });
     </script>
 </body>
