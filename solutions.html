@@ -30,8 +30,19 @@
                 <a href="about.html" class="hover:text-rose_accent">About</a>
                 <a href="contact.html" class="bg-rose_accent px-6 py-3 rounded-full text-white">Get Started</a>
             </div>
+            <button id="nav-toggle" class="lg:hidden p-2 text-white"><i data-lucide="menu"></i></button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-obsidian/95 backdrop-blur-xl hidden flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="close-menu" class="absolute top-6 right-6 p-4 text-white hover:text-rose_accent"><i data-lucide="x"></i></button>
+        <a href="expertise.html" class="hover:text-rose_accent">Expertise</a>
+        <a href="solutions.html" class="text-rose_accent">Solutions</a>
+        <a href="success.html" class="hover:text-rose_accent">Success</a>
+        <a href="about.html" class="hover:text-rose_accent">About</a>
+        <a href="contact.html" class="bg-rose_accent/10 px-8 py-3 rounded-full border border-rose_accent/20">Get Started</a>
+    </div>
 
     <main class="max-w-7xl mx-auto px-6 py-20">
         <header class="mb-32 text-center max-w-4xl mx-auto reveal">
@@ -170,6 +181,13 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menu = document.getElementById('mobile-menu');
+        const navToggle = document.getElementById('nav-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        navToggle.onclick = () => menu.classList.remove('hidden');
+        closeMenu.onclick = () => menu.classList.add('hidden');
+        menu.querySelectorAll('a').forEach(link => { link.onclick = () => menu.classList.add('hidden'); });
     </script>
 </body>
 </html>
