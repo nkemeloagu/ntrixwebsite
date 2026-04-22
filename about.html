@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Ntrix Technologies</title>
+    <!-- Favicon: Simple classy NT monogram -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI2IiBmaWxsPSIjMDIwNjE3Ii8+PHBhdGggZD0iTTcgMjJWMTBoM2w1IDdWMTBoM3YxMmgtM2wtNS03djdIN3oiIGZpbGw9IiNGOEZBRkMiLz48cGF0aCBkPSJNMjEgMTBoOHYzaC0yLjV2OWgtM3YtOUgyMXYtM3oiIGZpbGw9IiNGNDNGNUUiLz48L3N2Zz4=" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,7 +15,6 @@
     <style>
         body { background-color: #020617; color: #F8FAFC; }
         .glass-header { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .timeline-node { border-left: 2px solid rgba(244, 63, 94, 0.2); }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
@@ -23,81 +24,19 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-black tracking-tighter">NTRIX <span class="text-rose_accent">TECH</span></a>
             <div class="hidden lg:flex items-center space-x-10 text-[11px] font-black uppercase tracking-[0.2em]">
-                <a href="expertise.html" class="hover:text-rose_accent">Expertise</a>
-                <a href="solutions.html" class="hover:text-rose_accent">Solutions</a>
-                <a href="success.html" class="hover:text-rose_accent">Success</a>
+                <a href="expertise.html" class="hover:text-rose_accent transition-colors">Expertise</a>
+                <a href="solutions.html" class="hover:text-rose_accent transition-colors">Solutions</a>
+                <a href="success.html" class="hover:text-rose_accent transition-colors">Success</a>
                 <a href="about.html" class="text-rose_accent">About</a>
                 <a href="contact.html" class="bg-rose_accent px-6 py-3 rounded-full text-white">Get Started</a>
             </div>
         </div>
     </nav>
-
     <main class="max-w-7xl mx-auto px-6 py-20">
         <header class="mb-32 reveal">
             <h1 class="text-7xl md:text-9xl font-black mb-12 leading-none">The Ntrix <br> <span class="text-rose_accent">DNA.</span></h1>
-            <p class="text-2xl text-slate-400 max-w-3xl leading-relaxed">We were founded on a simple realization: Africa's digital economy is being built by talent, but sustained by infrastructure. We chose to build the infrastructure.</p>
         </header>
-
-        <section class="grid lg:grid-cols-2 gap-24 mb-40 items-center reveal">
-            <div>
-                <h2 class="text-4xl font-bold mb-8 italic">Pioneering for a continent in motion.</h2>
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed">Ntrix Technologies started as a small group of systems architects who were tired of seeing high-potential African startups fail due to scaling issues. Today, we are a full-service engineering partner for organizations that refuse to settle for "good enough."</p>
-                <div class="flex gap-12">
-                    <div>
-                        <p class="text-5xl font-black">2022</p>
-                        <p class="text-xs uppercase font-black text-rose_accent tracking-widest mt-2">Founded in Lagos</p>
-                    </div>
-                    <div>
-                        <p class="text-5xl font-black">15+</p>
-                        <p class="text-xs uppercase font-black text-rose_accent tracking-widest mt-2">Active Partners</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-12 bg-slate-900/50 rounded-[4rem] border border-white/10">
-                <h3 class="text-2xl font-bold mb-8">Our Core Philosophy</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-start space-x-4">
-                        <i data-lucide="chevron-right" class="text-rose_accent mt-1"></i>
-                        <p class="text-slate-400"><strong>Quality is a Security Feature:</strong> Clean code isn't just about aesthetics; it's the first line of defense.</p>
-                    </li>
-                    <li class="flex items-start space-x-4">
-                        <i data-lucide="chevron-right" class="text-rose_accent mt-1"></i>
-                        <p class="text-slate-400"><strong>Radical Transparency:</strong> We share our progress, our setbacks, and our technical debt openly with our partners.</p>
-                    </li>
-                    <li class="flex items-start space-x-4">
-                        <i data-lucide="chevron-right" class="text-rose_accent mt-1"></i>
-                        <p class="text-slate-400"><strong>Scalability is Human:</strong> We build systems that are easy for humans to maintain and grow, long after we've handed off the keys.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Journey Section -->
-        <section class="mb-40 reveal">
-            <h2 class="text-sm font-black uppercase tracking-[0.4em] text-slate-600 mb-16">The Timeline</h2>
-            <div class="space-y-12">
-                <div class="timeline-node pl-12 py-4 relative">
-                    <div class="absolute w-4 h-4 rounded-full bg-rose_accent -left-[9px] top-7"></div>
-                    <h4 class="text-2xl font-black text-rose_accent mb-2">2022: The Genesis</h4>
-                    <p class="text-slate-400 text-lg">Launched with a focus on cloud-native consulting for Nigerian FinTechs.</p>
-                </div>
-                <div class="timeline-node pl-12 py-4 relative">
-                    <div class="absolute w-4 h-4 rounded-full bg-slate-600 -left-[9px] top-7"></div>
-                    <h4 class="text-2xl font-black text-white mb-2">2023: Horizontal Expansion</h4>
-                    <p class="text-slate-400 text-lg">Introduced Cyber Security and Managed hardware sourcing to our core verticals.</p>
-                </div>
-                <div class="timeline-node pl-12 py-4 relative border-transparent">
-                    <div class="absolute w-4 h-4 rounded-full bg-slate-600 -left-[9px] top-7"></div>
-                    <h4 class="text-2xl font-black text-white mb-2">2024: Africa-Wide Presence</h4>
-                    <p class="text-slate-400 text-lg">Executing large-scale digital transformation projects across 4 East & West African countries.</p>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <footer class="py-20 border-t border-white/5 text-center text-slate-600 uppercase text-[10px] tracking-widest font-bold">
-        © 2024 NTRIX TECHNOLOGIES. ALL RIGHTS RESERVED.
-    </footer>
     <script>
         lucide.createIcons();
         const observer = new IntersectionObserver((entries) => {
