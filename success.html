@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success Stories | Ntrix Technologies</title>
+    <!-- Favicon: Simple classy NT monogram -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI2IiBmaWxsPSIjMDIwNjE3Ii8+PHBhdGggZD0iTTcgMjJWMTBoM2w1IDdWMTBoM3YxMmgtM2wtNS03djdIN3oiIGZpbGw9IiNGOEZBRkMiLz48cGF0aCBkPSJNMjEgMTBoOHYzaC0yLjV2OWgtM3YtOUgyMXYtM3oiIGZpbGw9IiNGNDNGNUUiLz48L3N2Zz4=" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,8 +15,6 @@
     <style>
         body { background-color: #020617; color: #F8FAFC; }
         .glass-header { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .case-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.5s ease; }
-        .case-card:hover { border-color: #F43F5E; }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
@@ -24,96 +24,17 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-black tracking-tighter">NTRIX <span class="text-rose_accent">TECH</span></a>
             <div class="hidden lg:flex items-center space-x-10 text-[11px] font-black uppercase tracking-[0.2em]">
-                <a href="expertise.html" class="hover:text-rose_accent">Expertise</a>
-                <a href="solutions.html" class="hover:text-rose_accent">Solutions</a>
+                <a href="expertise.html" class="hover:text-rose_accent transition-colors">Expertise</a>
+                <a href="solutions.html" class="hover:text-rose_accent transition-colors">Solutions</a>
                 <a href="success.html" class="text-rose_accent">Success</a>
-                <a href="about.html" class="hover:text-rose_accent">About</a>
+                <a href="about.html" class="hover:text-rose_accent transition-colors">About</a>
                 <a href="contact.html" class="bg-rose_accent px-6 py-3 rounded-full text-white">Get Started</a>
             </div>
         </div>
     </nav>
-
     <main class="max-w-7xl mx-auto px-6 py-20">
-        <header class="mb-32 reveal">
-            <h1 class="text-7xl md:text-8xl font-black mb-10 leading-[0.9]">Real Impact. <br> <span class="text-rose_accent">Real Results.</span></h1>
-            <p class="text-2xl text-slate-400 max-w-3xl leading-relaxed">We don't just deliver projects; we deliver outcomes. Below are a few selected case studies demonstrating how we solve complex business problems through engineering.</p>
-        </header>
-
-        <div class="space-y-32 mb-40">
-            <!-- Case 1 -->
-            <section class="grid lg:grid-cols-2 gap-20 items-center reveal">
-                <div class="case-card p-12 rounded-[4rem]">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-rose_accent/20 bg-rose_accent/5 text-[10px] font-black uppercase tracking-[0.2em] text-rose_accent mb-8">
-                        Fintech Migration
-                    </div>
-                    <h3 class="text-5xl font-black mb-8 leading-tight">Tidex Global: Scaling for the Masses</h3>
-                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">Tidex faced massive latency issues during peak trading hours. We orchestrated a zero-downtime migration to a multi-region AWS setup and optimized their database queries, resulting in a 300% increase in transaction throughput.</p>
-                    <div class="grid grid-cols-2 gap-8 border-t border-white/5 pt-8">
-                        <div>
-                            <p class="text-4xl font-black">30%</p>
-                            <p class="text-[10px] font-black uppercase text-slate-500 tracking-widest mt-1">Infrastructure Cost Reducton</p>
-                        </div>
-                        <div>
-                            <p class="text-4xl font-black">99.99%</p>
-                            <p class="text-[10px] font-black uppercase text-slate-500 tracking-widest mt-1">System Reliability Achieved</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="aspect-video bg-slate-900 rounded-[3rem] border border-white/10 overflow-hidden flex items-center justify-center">
-                        <i data-lucide="line-chart" class="w-32 h-32 text-rose_accent opacity-20"></i>
-                    </div>
-                    <div class="absolute -bottom-10 -left-10 p-10 bg-rose_accent rounded-[3rem] shadow-2xl">
-                        <p class="text-sm font-bold italic">"Ntrix Technologies didn't just fix our code; they fixed our business logic."</p>
-                        <p class="text-xs mt-4 uppercase font-black tracking-widest">— Elias Okafor, COO</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Case 2 -->
-            <section class="grid lg:grid-cols-2 gap-20 items-center flex-row-reverse reveal">
-                <div class="lg:order-2 case-card p-12 rounded-[4rem]">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 mb-8">
-                        Cyber Security
-                    </div>
-                    <h3 class="text-5xl font-black mb-8 leading-tight">ProlificCode: Hardening for Compliance</h3>
-                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">To achieve international ISO compliance, ProlificCode needed a complete infrastructure overhaul. We deployed a Zero-Trust network architecture and automated their security monitoring, enabling them to pass their audit with zero non-conformities.</p>
-                    <div class="grid grid-cols-2 gap-8 border-t border-white/5 pt-8">
-                        <div>
-                            <p class="text-4xl font-black">100%</p>
-                            <p class="text-[10px] font-black uppercase text-slate-500 tracking-widest mt-1">Audit Success Rate</p>
-                        </div>
-                        <div>
-                            <p class="text-4xl font-black">15min</p>
-                            <p class="text-[10px] font-black uppercase text-slate-500 tracking-widest mt-1">Avg. Threat Detection Time</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:order-1 relative">
-                    <div class="aspect-video bg-slate-900 rounded-[3rem] border border-white/10 overflow-hidden flex items-center justify-center">
-                        <i data-lucide="shield" class="w-32 h-32 text-blue-400 opacity-20"></i>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Clients Section -->
-        <section class="py-32 border-t border-white/5 text-center reveal">
-            <h2 class="text-sm font-black uppercase tracking-[0.4em] text-slate-600 mb-16">Trusted by Innovative Leaders</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 opacity-40 grayscale">
-                <span class="text-2xl font-black italic">TIDEX</span>
-                <span class="text-2xl font-black italic">PROLIFIC</span>
-                <span class="text-2xl font-black italic">SOLUTIONS</span>
-                <span class="text-2xl font-black italic">AFRI-TECH</span>
-                <span class="text-2xl font-black italic">CORE-SYS</span>
-                <span class="text-2xl font-black italic">DATA-HUB</span>
-            </div>
-        </section>
+        <h1 class="text-7xl md:text-8xl font-black mb-10 leading-[0.9] reveal">Real Impact. <br> <span class="text-rose_accent">Real Results.</span></h1>
     </main>
-
-    <footer class="py-20 border-t border-white/5 text-center text-slate-600 uppercase text-[10px] tracking-widest font-bold">
-        © 2024 NTRIX TECHNOLOGIES. ALL RIGHTS RESERVED.
-    </footer>
     <script>
         lucide.createIcons();
         const observer = new IntersectionObserver((entries) => {
