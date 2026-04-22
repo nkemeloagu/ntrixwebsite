@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXR0D1PPLL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZXR0D1PPLL');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXR0D1PPLL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZXR0D1PPLL');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon: Simple classy NT monogram -->
@@ -35,6 +34,7 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .hero-gradient { background: radial-gradient(circle at center, rgba(244, 63, 94, 0.15) 0%, transparent 80%); }
+        #mobile-menu { transition: opacity 0.3s ease, visibility 0.3s ease; }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -54,13 +54,14 @@
         </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-obsidian hidden flex-col items-center justify-center space-y-8 text-2xl font-bold">
-        <button id="close-menu" class="absolute top-6 right-6"><i data-lucide="x"></i></button>
-        <a href="expertise.html" class="hover:text-rose_accent">Expertise</a>
-        <a href="solutions.html" class="hover:text-rose_accent">Solutions</a>
-        <a href="success.html" class="hover:text-rose_accent">Success</a>
-        <a href="about.html" class="hover:text-rose_accent">About</a>
-        <a href="contact.html" class="text-rose_accent">Get Started</a>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-obsidian/95 backdrop-blur-xl hidden flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="close-menu" class="absolute top-6 right-6 p-4 text-white hover:text-rose_accent"><i data-lucide="x"></i></button>
+        <a href="expertise.html" class="hover:text-rose_accent transition-colors">Expertise</a>
+        <a href="solutions.html" class="hover:text-rose_accent transition-colors">Solutions</a>
+        <a href="success.html" class="hover:text-rose_accent transition-colors">Success</a>
+        <a href="about.html" class="hover:text-rose_accent transition-colors">About</a>
+        <a href="contact.html" class="text-rose_accent bg-rose_accent/10 px-8 py-3 rounded-full border border-rose_accent/20">Get Started</a>
     </div>
 
     <section class="relative min-h-screen flex items-center pt-32 overflow-hidden hero-gradient">
@@ -135,13 +136,28 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
             }, { threshold: 0.1 });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            
             const menu = document.getElementById('mobile-menu');
-            document.getElementById('nav-toggle').onclick = () => menu.classList.remove('hidden');
-            document.getElementById('close-menu').onclick = () => menu.classList.add('hidden');
+            const navToggle = document.getElementById('nav-toggle');
+            const closeMenu = document.getElementById('close-menu');
+            
+            navToggle.addEventListener('click', () => {
+                menu.classList.remove('hidden');
+            });
+            
+            closeMenu.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+
+            // Close menu when clicking on a link
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.add('hidden'));
+            });
         });
     </script>
 </body>
