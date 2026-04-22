@@ -28,8 +28,19 @@
                 <a href="about.html" class="hover:text-rose_accent">About</a>
                 <a href="contact.html" class="bg-rose_accent px-6 py-3 rounded-full text-white">Get Started</a>
             </div>
+            <button id="nav-toggle" class="lg:hidden p-2 text-white"><i data-lucide="menu"></i></button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-obsidian/95 backdrop-blur-xl hidden flex flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="close-menu" class="absolute top-6 right-6 p-4 text-white hover:text-rose_accent"><i data-lucide="x"></i></button>
+        <a href="expertise.html" class="text-rose_accent">Expertise</a>
+        <a href="solutions.html" class="hover:text-rose_accent">Solutions</a>
+        <a href="success.html" class="hover:text-rose_accent">Success</a>
+        <a href="about.html" class="hover:text-rose_accent">About</a>
+        <a href="contact.html" class="bg-rose_accent/10 px-8 py-3 rounded-full border border-rose_accent/20">Get Started</a>
+    </div>
 
     <main class="max-w-7xl mx-auto px-6 py-20">
         <div class="max-w-4xl mb-32 reveal">
@@ -73,7 +84,7 @@
                     <div>
                         <h4 class="text-3xl font-bold mb-4">In-Depth Discovery</h4>
                         <p class="text-slate-400 text-lg mb-6">We don't start coding until we fully understand your business pain points. This stage includes stakeholder interviews, technical audits of existing systems, and competitive market analysis.</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap gap-4">
                             <span class="px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold">FEASIBILITY STUDIES</span>
                             <span class="px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold">USER PERSONA MAPPING</span>
                         </div>
@@ -84,7 +95,7 @@
                     <div>
                         <h4 class="text-3xl font-bold mb-4">Rapid Prototyping & Design</h4>
                         <p class="text-slate-400 text-lg mb-6">We move fast from sketches to high-fidelity wireframes. Our design team focuses on 'Extreme Usability'—ensuring that complex enterprise software feels as intuitive as a consumer app.</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap gap-4">
                             <span class="px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold">UI/UX DESIGN</span>
                             <span class="px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold">CLICKABLE PROTOTYPES</span>
                         </div>
@@ -95,7 +106,7 @@
                     <div>
                         <h4 class="text-3xl font-bold mb-4">Agile Development & DevSecOps</h4>
                         <p class="text-slate-400 text-lg mb-6">Our development cycles are short (2-week sprints) and transparent. We integrate security testing (DAST/SAST) directly into our CI/CD pipelines to ensure the final product is iron-clad.</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-wrap gap-4">
                             <span class="px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold">CONTINUOUS INTEGRATION</span>
                             <span class="px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold">UNIT TESTING</span>
                         </div>
@@ -121,6 +132,13 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        const menu = document.getElementById('mobile-menu');
+        const navToggle = document.getElementById('nav-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        navToggle.onclick = () => menu.classList.remove('hidden');
+        closeMenu.onclick = () => menu.classList.add('hidden');
+        menu.querySelectorAll('a').forEach(link => { link.onclick = () => menu.classList.add('hidden'); });
     </script>
 </body>
 </html>
