@@ -96,25 +96,26 @@
                 </div>
 
                 <form id="contact-form" action="https://api.staticforms.xyz/submit" method="POST" class="space-y-8">
-                    <input type="hidden" name="accessKey" value="sf_2jm7ki8lhm77kni7243gif79">
+                    <input type="hidden" name="apiKey" value="sf_2jm7ki8lhm77kni7243gif79">
+                    <input type="hidden" name="_gotcha" style="display:none">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Full Name</label>
-                            <input type="text" name="name" placeholder="John Doe" required class="p-5 rounded-2xl w-full">
+                            <input type="text" name="Name" placeholder="John Doe" required class="p-5 rounded-2xl w-full">
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Organization</label>
-                            <input type="text" name="company" placeholder="e.g. AfriCorp" required class="p-5 rounded-2xl w-full">
+                            <input type="text" name="Company Name" placeholder="e.g. AfriCorp" required class="p-5 rounded-2xl w-full">
                         </div>
                     </div>
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Work Email</label>
-                        <input type="email" name="email" placeholder="john@company.com" required class="p-5 rounded-2xl w-full">
+                        <input type="email" name="Email" placeholder="john@company.com" required class="p-5 rounded-2xl w-full">
                     </div>
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Project Brief</label>
-                        <textarea name="message" placeholder="Briefly describe your technical goals..." rows="5" required class="p-5 rounded-2xl w-full"></textarea>
+                        <textarea name="Message" placeholder="Briefly describe your technical goals..." rows="5" required class="p-5 rounded-2xl w-full"></textarea>
                     </div>
                     <button id="submit-btn" type="submit" class="w-full py-6 bg-rose_accent rounded-2xl font-black text-white hover:bg-rose-600 transition-all active:scale-95 shadow-2xl shadow-rose-900/40 uppercase tracking-widest text-sm">
                         Submit Strategic Inquiry
@@ -244,9 +245,20 @@
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Processing...';
 
+                    // Parse the parameters natively
                     const formData = new FormData(form);
+                    
+                    // Standardize message block content
+                    const rawMessage = formData.get('Message');
+                    const companyName = formData.get('Company Name');
+                    const combinedMessage = `Organization/Company: ${companyName}\n\nProject Brief:\n${rawMessage}`;
+
                     const params = new URLSearchParams();
-                    for (const [key, value] of formData) { params.append(key, value); }
+                    params.append('apiKey', formData.get('apiKey'));
+                    params.append('Name', formData.get('Name'));
+                    params.append('Email', formData.get('Email'));
+                    params.append('Company Name', companyName);
+                    params.append('Message', combinedMessage);
 
                     try {
                         const response = await fetch(form.action, {
@@ -258,7 +270,9 @@
                             body: params
                         });
 
-                        if (response.ok) {
+                        const result = await response.json();
+
+                        if (response.ok && result.success) {
                             form.reset();
                             resArea.classList.remove('hidden');
                             submitBtn.textContent = 'Inquiry Sent';
@@ -268,9 +282,10 @@
                                 submitBtn.textContent = originalBtnText;
                             }, 6000);
                         } else {
-                            throw new Error('Failed to submit');
+                            throw new Error(result.message || 'Failed to submit');
                         }
                     } catch (err) {
+                        console.error('Submission error:', err);
                         submitBtn.textContent = 'Error. Try Again';
                         submitBtn.disabled = false;
                         setTimeout(() => { submitBtn.textContent = originalBtnText; }, 4000);
