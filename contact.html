@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Ntrix Technologies</title>
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI2IiBmaWxsPSIjMDIwNjE3Ii8+PHBhdGggZD0iTTcgMjJWMTBoM2w1IDdWMTBoM3YxMmgtM2wtNS03djdIN3oiIGZpbGw9IiNGOEZBRkMiLz48cGF0aCBkPSJNMjEgMTBoOHYzaC0yLjV2OWgtM3YtOUgyMXYtM3oiIGZpbGw9IiNGNDNGNUUiLz48L3N2Zz4=" type="image/svg+xml">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI2IiBmaWxsPSIjMDIwNjE3Ii8+PHBhdGggZD0iTTcgMjJWMTBoM3YxbDUgN1YxMGgzdjEyaC0zbC01LTd2N0g3eiIgZmlsbD0iI0Y4RkFGQyIvPjxwYXRoIGQgIk0yMSAxMGg4djNoLTIuNXY5aC0zdi05SDIxdi0zeiIgZmlsbD0iI0Y0M0Y1RSIvPjwvc3ZnPg==" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -109,10 +109,19 @@
                             <input type="text" name="Company Name" placeholder="e.g. AfriCorp" required class="p-5 rounded-2xl w-full">
                         </div>
                     </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Work Email</label>
-                        <input type="email" name="Email" placeholder="john@company.com" required class="p-5 rounded-2xl w-full">
+                    
+                    <!-- Grid containing both Email and the brand new Phone Number field -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Work Email</label>
+                            <input type="email" name="Email" placeholder="john@company.com" required class="p-5 rounded-2xl w-full">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Phone Number</label>
+                            <input type="tel" name="Phone Number" placeholder="+234 801 234 5678" required class="p-5 rounded-2xl w-full">
+                        </div>
                     </div>
+
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Project Brief</label>
                         <textarea name="Message" placeholder="Briefly describe your technical goals..." rows="5" required class="p-5 rounded-2xl w-full"></textarea>
@@ -245,20 +254,9 @@
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Processing...';
 
-                    // Parse the parameters natively
                     const formData = new FormData(form);
-                    
-                    // Standardize message block content
-                    const rawMessage = formData.get('Message');
-                    const companyName = formData.get('Company Name');
-                    const combinedMessage = `Organization/Company: ${companyName}\n\nProject Brief:\n${rawMessage}`;
-
                     const params = new URLSearchParams();
-                    params.append('apiKey', formData.get('apiKey'));
-                    params.append('Name', formData.get('Name'));
-                    params.append('Email', formData.get('Email'));
-                    params.append('Company Name', companyName);
-                    params.append('Message', combinedMessage);
+                    for (const [key, value] of formData) { params.append(key, value); }
 
                     try {
                         const response = await fetch(form.action, {
@@ -270,9 +268,7 @@
                             body: params
                         });
 
-                        const result = await response.json();
-
-                        if (response.ok && result.success) {
+                        if (response.ok) {
                             form.reset();
                             resArea.classList.remove('hidden');
                             submitBtn.textContent = 'Inquiry Sent';
@@ -282,10 +278,9 @@
                                 submitBtn.textContent = originalBtnText;
                             }, 6000);
                         } else {
-                            throw new Error(result.message || 'Failed to submit');
+                            throw new Error('Failed to submit');
                         }
                     } catch (err) {
-                        console.error('Submission error:', err);
                         submitBtn.textContent = 'Error. Try Again';
                         submitBtn.disabled = false;
                         setTimeout(() => { submitBtn.textContent = originalBtnText; }, 4000);
